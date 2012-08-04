@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>jSwitch - jQuery plugin for creating dynamic web galleries</title>
+
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="../src/jquery.jswitch.js"></script>
+	<script>
+	$(document).ready(function(){				
+		$('#myGallery').jswitch({
+			callback:function(jswitch){			
+				$('#next').click(function(){
+					jswitch.nextImage();				
+				});
+				
+				$('#prev').click(function(){
+					jswitch.prevImage();				
+				});
+			}			
+		});
+				
+	});
+	</script>
+	<style>
+	body{margin:0;padding:0;font: 16px/21px Arial, Helvetica, sans-serif;}
+	pre{margin:1.5em 0;white-space:pre;padding:1em;background:#f6f6f6;border-left:10px solid #eee;overflow-x:auto;}
+	a:link,a:visited{color:#000;text-decoration:underline;}
+	a:hover{color:#000;text-decoration:underline;}
+	a:active{color:#000;text-decoration:none;}
+	h1,h2,h3,h4,h5,h6{color: #000;font-family: Helvetica, Arial;line-height: 1.1em;font-weight: bold;padding-bottom: 5px;text-shadow: 0 1px 0 #fff;}
+	h1{font-size:40px;letter-spacing:-1px; margin-bottom:0;padding-bottom:0;}
+	h2{font-size:30px;letter-spacing:-1px;}
+	h3{font-size:22px;letter-spacing:-0.02em;color:#373737;}
+	h4{font-size:14px;font-weight:normal;padding-bottom:10px;}
+	#container{width:960px;margin:20px auto;}	
+	#container .download{background:url(images/download.png) no-repeat;padding:8px 0 8px 40px;}	
+	#container .share{position:absolute; top:30px;margin-left:900px;}	
+	#container .slogan{margin:4px auto;color:#444;font-size:0.9em;font-style:italic;}	
+	#myGallery{border:4px solid #eee;width:960px;height:360px;overflow:hidden;position:relative;padding:0;margin:0;background:#000;}
+	#container .controls{text-indent:-10000px;background:url(images/controls.png) no-repeat;width:30px;height:56px;display:block;position:absolute;}
+	#container .controls#prev{margin-top:150px;margin-left:-30px;}	
+	#container .controls#next{background-position:-30px 0;margin-top:-215px;margin-left:970px;}	
+	</style>
+
+</head>
+<body>
+
+<div id="container">
+	<h1>jSwitch</h1>
+	<p class="slogan">jQuery plugin for creating dynamic web galleries</p><br/>
+	<div class="share">
+	<a href="http://twitter.com/share" class="twitter-share-button" data-url="http://creativator.net/projects/jswitch/" data-text="Nice #jQuery plugin for creating dynamic web galleries" data-count="vertical" data-via="creativator_ru">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	</div>
+	<a href="#" class="controls" id="prev"> Prev image</a>
+	<div id="myGallery"> 
+		<ul>
+			<li><img src="images/lights3.jpg" alt="" /></li>
+			<li><img src="images/bw2.jpg" alt="" /></li>			
+			<li><img src="images/lights2.jpg" alt="" /></li>
+			<li><img src="images/bw1.jpg" alt="" /></li>
+			<li><img src="images/lights1.jpg" alt="" /></li>
+			<li><img src="images/bw3.jpg" alt="" /></li>
+		</ul>
+	</div>
+	<a href="#" class="controls" id="next">Next image</a>
+	
+	<h2>What is jSwitch?</h2>
+	<p>jSwitch is a customizable jQuery image gallery engine wich allows create outstanding sliding image galleries. Look and feel was inspired by Blackberry PlayBook. </p>
+	<h2>Getting Started</h2>
+	<p>The goal of jSwitch is to create nice slideshows in simple way, without much knowlage of developing. Follow this simple steps to get fast creating slideshow</p>
+	<h3>1. Download and Unzip</h3>
+	<a href="jSwitch.zip" class="download">Download Now (1.24MB)</a>
+	<h3>2. Place your HTML</h3>
+	<p>At first you need to create list of all your images, in one container, and put it into your page BODY.</p>
+	<pre>
+		<code>
+&lt;div id=&quot;myGallery&quot;&gt;
+   &lt;ul&gt;
+      &lt;li&gt;&lt;img src=&quot;images/image1.jpg&quot; alt=&quot;My photo 1&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;images/image2.jpg&quot; alt=&quot;My photo 2&quot; /&gt;&lt;/li&gt;			
+      &lt;li&gt;&lt;img src=&quot;images/image3.jpg&quot; alt=&quot;My photo 3&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;images/image4.jpg&quot; alt=&quot;My photo 4&quot; /&gt;&lt;/li&gt;
+      ...
+   &lt;/ul&gt;
+&lt;/div&gt;
+		</code>
+	</pre>
+	<h3>3. Include Library</h3>
+	<p>Next you need to include jQuery and jSwitch library into your page. Place this code inside your HEAD section</p>
+	<pre>
+		<code>
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.jswitch.js&quot;&gt;&lt;/script&gt;
+		</code>
+	</pre>
+	<h3>4. Launch gallery</h3>
+	<p>Now everything is ready for launching script. Simple put jSwitch call to your jQuery code section, for example:</p>
+	<pre>
+		<code>
+$(document).ready(function(){
+   $('#myGallery').jswitch();
+});
+		</code>
+	</pre>
+	<h3>5. Finishing</h3>
+	<p>To finish installing, put this CSS to your stylesheet file. Note, that "width" and "height" parameters are very important, so don't miss them.</p>
+	<pre>
+		<code>
+#myGallery{
+   width:960px;
+   height:360px;
+   overflow:hidden;		
+   position:relative;	
+   padding:0;
+   margin:0;
+   background:#000;
+}			
+		</code>
+	</pre>
+	
+	<p>If you get some problems installing it, look at this examples to understand how to tune script for your project</p>
+	<ul>
+		<li>Example A - <a href="examples/basic.html" target="blank"> Basic usage</a></li>
+		<li>Example B - <a href="examples/advanced.html"  target="blank"> Advanced usage with user defined options and callbacks</a></li>
+	</ul>
+	<br/><br/>
+	<p align="center">&copy; 2011 <a href="http://creativator.net">Creativator</a></p>
+	<br/><br/>
+ <script type="text/javascript"> 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20429520-1']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script> 
+ </div> 
+ 
+
+
+   

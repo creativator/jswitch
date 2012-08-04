@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jSwitch - Basic example</title>
+
+	<script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="../src/jquery.jswitch.js"></script>
+	<script>
+	$(document).ready(function(){				
+		$('#myGallery').jswitch();				
+	});
+	</script>
+	<style>
+	#myGallery{border:4px solid #eee;width:960px;height:360px;overflow:hidden;position:relative;padding:0;margin:0;background:#000;}
+	</style>
+
+</head>
+<body>
+	<div id="myGallery">
+		<ul>
+			<li><img src="images/lights3.jpg" alt="" /></li>
+			<li><img src="images/bw2.jpg" alt="" /></li>
+			<li><img src="images/lights2.jpg" alt="" /></li>
+			<li><img src="images/bw1.jpg" alt="" /></li>
+			<li><img src="images/lights1.jpg" alt="" /></li>
+			<li><img src="images/bw3.jpg" alt="" /></li>
+		</ul>
+	</div>
+</body>
+</html>
